@@ -9,12 +9,33 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-Route::get('think', function () {
-    return 'hello,ThinkPHP5!';
-});
 
-Route::get('hello/:name', 'index/hello');
+/**
+ * 后台
+ */
+//登录
+Route::rule('login', 'admin/Login/in')->method('GET,POST');
+//后台首页
+Route::rule('end', 'admin/Index/index')->method('GET,POST');
 
-return [
 
-];
+
+
+
+
+
+
+
+
+
+
+/**
+ * 前台
+ */
+//前台首页
+Route::rule('xuebuhui', 'i`ndex/Index/index')->method('GET,POST');
+
+//前台注册
+Route::rule('Sign/on', 'index/Sign/on')->method('GET,POST');
+//前台登录
+Route::rule('Sign/in', 'index/Sign/in')->method('GET,POST');

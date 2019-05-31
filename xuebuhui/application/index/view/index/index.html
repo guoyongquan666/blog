@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)http://xuebuting.com/ -->
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta name="description" content="我爱学习，我爱编程，学习编程使我快乐；学习爽，编程爽，一直学习编程一直爽；生命不止，学习不止！">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <title>编程·学不会</title>
+
+
+    <style>
+        table.nav_tag_list {
+            margin-bottom: 0.2rem;
+        }
+
+        table.nav_tag_list td {
+            padding: 0.3rem;
+        }
+
+        table.nav_tag_list td a {
+            margin-right: 0.2rem;
+        }
+
+        .nav_tag_list .active {
+            font-weight: normal
+        }
+
+        .tag_option {
+            border: 1px solid #bbb;
+            padding: 1px 10px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .tag_option:active, .tag_option.active {
+            border: 1px solid #000;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+    <link rel="stylesheet" href="/static/blog/编程·学不停_files/bootstrap.css">
+
+
+    <link rel="stylesheet" href="/static/blog/编程·学不停_files/bootstrap-bbs.css">
+
+
+    <!--<link href="plugin/gmchina_xiuno_editormd/editormd/editormd.min.css" type="text/css" rel="stylesheet" />-->
+    <link href="/static/blog/编程·学不停_files/editormd.min.css" type="text/css" rel="stylesheet">
+    <style>
+        /*
+        box-shadow: 0 0 5px red;
+        */
+        @keyframes xndigest {
+            0% {
+                color: red;
+                text-shadow: 0 0 3px #FF8D8D;
+            }
+            20% {
+                color: orange;
+                text-shadow: 0 0 3px #FFE1AD;
+            }
+            40% {
+                color: green;
+                text-shadow: 0 0 3px #B3FFAF;
+            }
+            65% {
+                color: blue;
+                text-shadow: 0 0 3px #AFE4FF;
+            }
+            80% {
+                color: purple;
+                text-shadow: 0 0 3px #FFC9F3;
+            }
+            100% {
+                color: red;
+                text-shadow: 0 0 3px #FF8D8D;
+            }
+        }
+
+        /*水晶闪烁效果 占内存*/
+        i.icon-diamond.flash {
+            color: #D53D38; /*animation: xndigest 5s linear infinite;*/
+        }
+
+        i.icon-digest-1 {
+            text-shadow: 0 0 3px #AFE4FF;
+        }
+
+        i.icon-digest-2 {
+            text-shadow: 0 0 3px #FFF177;
+        }
+
+        i.icon-digest-3 {
+            text-shadow: 0 0 3px #FF8D8D;
+        }
+
+        .icon-digest-1:before {
+            content: "\f219";
+            color: #5BC0DE;
+        }
+
+        /* "\f0a5" */
+        .icon-digest-2:before {
+            content: "\f219";
+            color: #ECA541;
+        }
+
+        .icon-digest-3:before {
+            content: "\f219";
+            color: #D53D38;
+        }
+
+        .icon-digest-3:afteer {
+            content: "精";
+            color: #D53D38;
+        }
+    </style>
+    <style>
+        /*
+        .toggle_more {
+            max-height: 100px;
+        }
+        */
+        .update_log_list a.update_log_history,
+        .update_log_list a.update_log_delete {
+            display: none;
+        }
+
+        .update_log_list > li:hover {
+            background: var(--gray-300);
+        }
+
+        .update_log_list > li:hover > a.update_log_history,
+        .update_log_list > li:hover > a.update_log_delete {
+            display: inline-block;
+        }
+
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="/static/blog/编程·学不停_files/codemirror.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/blog/编程·学不停_files/dialog.css">
+    <link type="text/css" rel="stylesheet" href="/static/blog/编程·学不停_files/matchesonscrollbar.css">
+    <script id="plugin-gmchina_xiuno_editormd-editormd-lib-codemirror-codemirror-min" type="text/javascript" src="/static/blog/编程·学不停_files/codemirror.min.js"></script>
+    <script id="plugin-gmchina_xiuno_editormd-editormd-lib-codemirror-modes-min" type="text/javascript" src="/static/blog/编程·学不停_files/modes.min.js"></script>
+    <script id="plugin-gmchina_xiuno_editormd-editormd-lib-codemirror-addons-min" type="text/javascript" src="/static/blog/编程·学不停_files/addons.min.js"></script>
+</head>
+
+<body>
+
+
+<header class="navbar navbar-expand-lg navbar-dark bg-dark" id="header">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav"
+                aria-controls="navbar_collapse" aria-expanded="false" aria-label="展开菜单">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <a class="navbar-brand text-truncate" href="http://xuebuting.com/">
+            <!--<img src="view/img/logo.png" class="logo-2">-->
+        </a>
+
+
+        <a class="navbar-brand hidden-lg" href="http://xuebuting.com/thread-create-0.htm" aria-label="发表主题"><i
+                class="icon-edit icon"></i></a>
+
+
+        <div class="collapse navbar-collapse" id="nav">
+            <!-- 左侧：版块 -->
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item home active" fid="0" data-active="fid-0"><a class="nav-link"
+                                                                                href="http://xuebuting.com/"><i
+                        class="icon-home d-md-none"></i> 首页</a></li>
+
+
+                <li class="nav-item" fid="1" data-active="fid-1">
+                    <a class="nav-link" href="http://xuebuting.com/forum-1.htm"><i class="icon-circle-o d-md-none"></i>
+                        闲聊</a>
+                </li>
+
+
+                <li class="nav-item" fid="2" data-active="fid-2">
+                    <a class="nav-link" href="http://xuebuting.com/forum-2.htm"><i class="icon-circle-o d-md-none"></i>
+                        PHP</a>
+                </li>
+
+
+                <li class="nav-item" fid="3" data-active="fid-3">
+                    <a class="nav-link" href="http://xuebuting.com/forum-3.htm"><i class="icon-circle-o d-md-none"></i>
+                        Java</a>
+                </li>
+
+
+                <li class="nav-item" fid="4" data-active="fid-4">
+                    <a class="nav-link" href="http://xuebuting.com/forum-4.htm"><i class="icon-circle-o d-md-none"></i>
+                        Python</a>
+                </li>
+
+
+                <li class="nav-item" fid="5" data-active="fid-5">
+                    <a class="nav-link" href="http://xuebuting.com/forum-5.htm"><i class="icon-circle-o d-md-none"></i>
+                        前端</a>
+                </li>
+
+
+                <li class="nav-item" fid="8" data-active="fid-8">
+                    <a class="nav-link" href="http://xuebuting.com/forum-8.htm"><i class="icon-circle-o d-md-none"></i>
+                        UI</a>
+                </li>
+
+
+                <li class="nav-item" fid="11" data-active="fid-11">
+                    <a class="nav-link" href="http://xuebuting.com/forum-11.htm"><i class="icon-circle-o d-md-none"></i>
+                        服务器</a>
+                </li>
+
+
+                <li class="nav-item" fid="13" data-active="fid-13">
+                    <a class="nav-link" href="http://xuebuting.com/forum-13.htm"><i class="icon-circle-o d-md-none"></i>
+                        数据库</a>
+                </li>
+
+
+                <li class="nav-item" fid="9" data-active="fid-9">
+                    <a class="nav-link" href="http://xuebuting.com/forum-9.htm"><i class="icon-circle-o d-md-none"></i>
+                        相亲</a>
+                </li>
+
+
+                <li class="nav-item" fid="10" data-active="fid-10">
+                    <a class="nav-link" href="http://xuebuting.com/forum-10.htm"><i class="icon-circle-o d-md-none"></i>
+                        求职招聘</a>
+                </li>
+
+
+            </ul>
+            <!-- 右侧：用户 -->
+            <ul class="navbar-nav">
+                <li class="nav-item hidden-lg">
+                    <a class="nav-link" href="http://xuebuting.com/search.htm"><i class="icon-search"></i> 搜索</a>
+                </li>
+                <li class="nav-item username"><a class="nav-link" href="http://xuebuting.com/my.htm"><img
+                        class="avatar-1" src="/static/blog/编程·学不停_files/42.png"> 我才是真的赎身</a></li>
+                <!-- 管理员 -->
+
+                <li class="nav-item"><a class="nav-link" href="http://xuebuting.com/user-logout.htm"><i
+                        class="icon-sign-out"></i> 退出</a></li>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main id="body">
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-lg-9 main">
+
+                <div class="card card-threadlist">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="http://xuebuting.com/index.htm">最新</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  " href="http://xuebuting.com/index-0-1.htm">精华</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled threadlist mb-0">
+
+
+                            <li class="media thread tap top_3 " data-href="thread-1.htm" data-tid="1">
+
+                                <a rel="nofollow" target="_blank" href="http://xuebuting.com/user-1.htm" tabindex="-1"
+                                   class="ml-1 mt-1 mr-3">
+                                    <img class="avatar-3" src="/static/blog/编程·学不停_files/avatar.png">
+                                </a>
+
+
+                                <div class="media-body">
+                                    <div class="subject break-all">
+
+
+                                        <i class="icon-top-3"></i>
+
+
+                                        <a target="_blank"
+                                           href="http://xuebuting.com/thread-1.htm">关于编程·学不停社区的一些说明和约定</a>
+
+
+                                    </div>
+                                    <div class="d-flex justify-content-between small mt-1">
+                                        <div>
+
+                                            <span class="username text-grey mr-1  hidden-sm" uid="1">shusheng</span>
+                                            <span class="date text-grey hidden-sm">2月前</span>
+
+
+                                            <span>
+										<span class="text-grey mx-2">←</span>
+										<span class="username text-grey mr-1" uid="1">shusheng</span>
+										<span class="text-grey">1月前</span>
+									</span>
+
+                                        </div>
+                                        <div class="text-muted small">
+
+                                            <span class="ml-2 d-none"><i class="icon-eye"></i> 501</span>
+
+
+                                            <span class="ml-2"><i class="icon-comment-o"></i> 17</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="media thread tap  " data-href="thread-95.htm" data-tid="95">
+
+                                <a rel="nofollow" target="_blank" href="http://xuebuting.com/user-30.htm" tabindex="-1"
+                                   class="ml-1 mt-1 mr-3">
+                                    <img class="avatar-3" src="/static/blog/编程·学不停_files/30.png">
+                                </a>
+
+
+                                <div class="media-body">
+                                    <div class="subject break-all">
+
+
+                                        <a target="_blank" href="http://xuebuting.com/thread-95.htm">实现页面静态化，PHP是如何实现的，你又是如何实现的</a>
+
+
+                                        <i class="icon small filetype other"></i>
+
+
+                                    </div>
+                                    <div class="d-flex justify-content-between small mt-1">
+                                        <div>
+
+                                            <span class="username text-grey mr-1 " uid="30">删库跑路</span>
+                                            <span class="date text-grey">20小时前</span>
+
+
+                                        </div>
+                                        <div class="text-muted small">
+
+                                            <span class="ml-2 d-none"><i class="icon-eye"></i> 9</span>
+
+
+                                            <span class="ml-2"><i class="icon-comment-o"></i> 0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <nav class="my-3">
+                    <ul class="pagination justify-content-center flex-wrap">
+                        <li class="page-item active"><a href="http://xuebuting.com/index-1.htm" class="page-link">1</a>
+                        </li>
+                        <li class="page-item"><a href="http://xuebuting.com/index-2.htm" class="page-link">2</a></li>
+                        <li class="page-item"><a href="http://xuebuting.com/index-3.htm" class="page-link">3</a></li>
+                        <li class="page-item"><a href="http://xuebuting.com/index-4.htm" class="page-link">4</a></li>
+                        <li class="page-item"><a href="http://xuebuting.com/index-5.htm" class="page-link">5</a></li>
+                        <li class="page-item"><a href="http://xuebuting.com/index-2.htm" class="page-link">▶</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+            <div class="col-lg-3 d-none d-lg-block aside">
+                <a role="button" class="btn btn-primary btn-block mb-3" href="http://xuebuting.com/thread-create-0.htm">发布新主题</a>
+
+                <div class="card card-site-info">
+
+                    <div class="m-3">
+                        <h5 class="text-center">编程·学不停</h5>
+                        <div class="small line-height-3">我爱学习，我爱编程，学习编程使我快乐；学习爽，编程爽，一直学习编程一直爽；生命不止，学习不止！</div>
+                    </div>
+                    <div class="card-footer p-2">
+                        <table class="w-100 small">
+                            <tbody>
+                            <tr align="center">
+                                <td>
+                                    <span class="text-muted">主题数</span><br>
+                                    <b>86</b>
+                                </td>
+                                <td>
+                                    <span class="text-muted">帖子数</span><br>
+                                    <b>51</b>
+                                </td>
+                                <!--<td>
+                                    <span class="text-muted">用户数</span><br>
+                                    <b>54</b>
+                                </td>-->
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <form action="http://xuebuting.com/search.htm" id="search_form">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="关键词" name="keyword">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">搜索</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        小黑板
+                    </div>
+                    <div class="card-footer">
+                        郑州PHP程序员：
+                        <a rel="nofollow" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0641d15e8f5f4cd93db1c76a197e40b568ec3f82e042f22f27fc51ef0dcda7f6"><img border="0" src="/static/blog/编程·学不停_files/group.png" alt="郑州php程序员俱乐部ZPC" title="郑州php程序员俱乐部ZPC"></a>
+                        <br>郑州PHP招聘：
+                        <a rel="nofollow" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=748f4233f068fa2eed47a85fd0d88fa6a01aa642fd8b5c8ccde35e6c4f5c0262"><img border="0" src="/static/blog/编程·学不停_files/group.png" alt="郑州PHP招聘/交流" title="郑州PHP招聘/交流"></a>
+                        <br>郑州Python程序员：
+                        <a rel="nofollow" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=dca46d3b740a7193b67f317fd91965ee892f62120cc23b5643c253aa2fd316ca"><img border="0" src="/static/blog/编程·学不停_files/group.png" alt="郑州Python程序员" title="郑州Python程序员"></a>
+                        <br>郑州程序员招聘：
+                        <a rel="nofollow" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=b976d806a8aa64041351b7b749b92599a947f57a0d31d359c3c8aef42e49d490"><img border="0" src="/static/blog/编程·学不停_files/group.png" alt="郑州程序员招聘交流" title="郑州程序员招聘交流"></a>
+                    </div>
+                </div>
+
+                <div class="card friendlink">
+                    <div class="card-header">友情链接</div>
+                    <div class="card-body small">
+                        <ul>
+                            <li class="mb-1 small line-height-2">
+                                <a href="https://imshusheng.com/" target="_blank">
+                                    书生程序员 </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</main>
+
+
+<footer class="text-muted small bg-dark py-4 mt-3" id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col text-right">
+
+                豫ICP备15013988号
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!--[if ltg IE 9]>
+<script>window.location = 'browser.htm';</script>
+<![endif]-->
+
+
+<script src="/static/blog/编程·学不停_files/hm.js"></script>
+<script src="/static/blog/编程·学不停_files/bbs.js"></script>
+<script src="/static/blog/编程·学不停_files/jquery-3.1.0.js"></script>
+<script src="/static/blog/编程·学不停_files/popper.js"></script>
+<script src="/static/blog/编程·学不停_files/bootstrap.js"></script>
+<script src="/static/blog/编程·学不停_files/xiuno.js"></script>
+<script src="/static/blog/编程·学不停_files/bootstrap-plugin.js"></script>
+<script src="/static/blog/编程·学不停_files/async.js"></script>
+<script src="/static/blog/编程·学不停_files/form.js"></script>
+<script>
+    var debug = DEBUG = 0;
+    var url_rewrite_on = 1;
+    var forumarr = {
+        "1": "闲聊",
+        "2": "PHP",
+        "3": "Java",
+        "4": "Python",
+        "5": "前端",
+        "8": "UI",
+        "11": "服务器",
+        "13": "数据库",
+        "9": "相亲",
+        "10": "求职招聘"
+    };
+    var fid = 0;
+    var uid = 42;
+    var gid = 101;
+    xn.options.water_image_url = 'view/img/water-small.png';	// 水印图片 / watermark image
+</script>
+<script src="/static/blog/编程·学不停_files/bbs(1).js"></script>
+<script src="/static/blog/编程·学不停_files/flowchart.min.js"></script>
+<script src="/static/blog/编程·学不停_files/jquery.flowchart.min.js"></script>
+<script src="/static/blog/编程·学不停_files/marked.min.js"></script>
+<script src="/static/blog/编程·学不停_files/prettify.min.js"></script>
+<script src="/static/blog/编程·学不停_files/raphael.min.js"></script>
+<!--<script src="plugin/gmchina_xiuno_editormd/editormd/lib/sequence-diagram.min.js?1.0"></script>-->
+<script src="/static/blog/编程·学不停_files/underscore.min.js"></script>
+<script src="/static/blog/编程·学不停_files/xss.min.js"></script>
+<script src="/static/blog/编程·学不停_files/editormd.min.js"></script>
+
+
+<script>
+    var initEditor;
+    $(function () {
+        initEditor = editormd("editormd", {
+            width: "100%",
+            height: 640,
+            syncScrolling: "single",
+            path: "plugin/gmchina_xiuno_editormd/editormd/lib/",
+            imageUpload: true,
+            imageFormats: ['jpg', 'png', 'bmp', 'jpeg', 'gif', 'webp'],
+            imageUploadURL: "plugin/gmchina_xiuno_editormd/upload/local/upload.php",
+            crossDomainUpload: false,
+            autoHeight: false,
+            readOnly: false,
+            codeFold: false,
+            taskList: false,
+            atLink: false,
+            emailLink: false,
+            tex: false,
+            flowChart: false,
+            sequenceDiagram: false,
+            pageBreak: false
+        });
+    });
+</script>
+<script>
+    // 版主管理：精华
+    /*
+    $('.mod-button button.digest').on('click', function() {
+        var modtid = $('input[name="modtid"]').checked();
+        if(modtid.length == 0) return $.alert(lang.please_choose_thread);
+        var radios = xn.form_radio('digest', {"0": "取消精华", "1": "一级精华","2": "二级精华", "3": "三级精华"});
+        $.confirm("设置主题为精华", function() {
+            var tids = xn.implode('_', modtid);
+            var digest = $('input[name="digest"]').checked();
+            var postdata = {digest: digest};
+            $.xpost(xn.url('mod-digest-'+tids), postdata, function(code, message) {
+                if(code != 0) return $.alert(message);
+                $.alert(message).delay(1000).location('');
+            });
+        }, {'body': '<p>'+"精华等级"+'：'+radios+'</p>'});
+    })*/
+</script>
+
+
+<div id="scroll_to_top" class="d-fixed"
+     style="position: fixed; _position: absolute; bottom: 80px; right: 10px; width: 70px; height: 70px; display: none;">
+    <a href="javascript:void(0);"
+       style="width: 70px; height: 70px; display: inline-block; background: url(/static/blog/编程·学不停_files/111.png) no-repeat; outline: none;"
+       title="返回顶部"></a>
+</div>
+
+<script>
+    // 返回顶部
+    var jscroll_to_top = $('#scroll_to_top');
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= 500) {
+            jscroll_to_top.fadeIn(300);
+        } else {
+            jscroll_to_top.fadeOut(300);
+        }
+    });
+
+    jscroll_to_top.on('click', function () {
+        $('html,body').animate({scrollTop: '0px'}, 100);
+    });
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?8decc8da034947be30b3c68c6a285254";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<script>
+    $('li[data-active="fid-0"]').addClass('active');
+</script>
+
+<script>
+    jsearch_form = $('#search_form');
+    jsearch_form.on('submit', function () {
+        var keyword = jsearch_form.find('input[name="keyword"]').val();
+        var url = xn.url('search-' + xn.urlencode(keyword));
+        window.location = url;
+        return false;
+    });
+</script>
+</body>
+</html>
