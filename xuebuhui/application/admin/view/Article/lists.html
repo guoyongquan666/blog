@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加分类</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    {include file='common/css'}
+
+</head>
+
+<body class="gray-bg">
+<div class="container wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>*</th>
+                        <th>封面</th>
+                        <th>文章标题</th>
+                        <th>文章署名</th>
+                        <th>所属分类</th>
+                        <th>文章状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {foreach $list as $v}
+
+                    <tr>
+                        <td>{$v.id}</td>
+                        <td>
+                            {if $v.minthumb}
+                            <img src="/{$v.minthumb}">
+                            {else/}
+                            <span>暂无封面</span>
+                            {/if}
+                        </td>
+                        <td>{$v.title}</td>
+                        <td>{$v.author}</td>
+                        <td>{$v.category.name}</td>
+                        <td>
+                            {if $v.status}
+                            <span>已发布</span>
+                            <button data-id="{$v.id}" class="btn btn-warning status btn-xs">下线</button>
+                            {else/}
+                            <span>未发布</span>
+                            <button data-id="{$v.id}" class="btn btn-primary status btn-xs">上线</button>
+                            {/if}
+
+                        </td>
+                        <td>
+                            <a class="btn del" data-id="{$v.id}">删除</a>
+                            <a class="btn" href="{:url('admin/article/revise',['id' => $v['id']])}" >修改</a>
+                        </td>
+                    </tr>
+
+                    {/foreach}
+
+                    </tbody>
+                </table>
+
+                {$list|raw}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{include file='common/js'}
+
+</body>
+
+<script>
+
+
+    $('.status').click(function () {
+
+        var i = $(this);
+        $.post('{:url("admin/Article/changeStatus")}', {id: i.attr('data-id')}, function (e) {
+            if (!e.code){
+                layer.alert(e.msg);
+            }else{
+                if (e.data) {
+                    //修改后已经处于发布状态
+                    i.prev().html('已发布');
+                    i.html('下线').removeClass('btn-primary').addClass('btn-warning')
+                }else{
+                    i.prev().html('未发布');
+                    i.html('上线').removeClass('btn-warning').addClass('btn-primary')
+                }
+
+            }
+        })
+
+    });
+
+    //绑定删除文章时间
+    $('.del').click(function () {
+
+        var i = $(this);
+        var id = i.attr('data-id');
+        //询问是否删除
+        layer.confirm('您确认删除吗？',{icon: 3,title:'提示'},function (E) {
+            $.post('{:url("admin/Article/delete")}',{id: id},function (e) {
+                console.log(e);
+                if (e.code){
+                    i.parent().parent().remove();
+                    layer.alert(e.msg,{icon:1});
+                }else {
+                    layer.alert(e.msg,{icon:2});
+                }
+            });
+            layer.close(E);
+        });
+
+    })
+
+
+</script>
+
+</html>

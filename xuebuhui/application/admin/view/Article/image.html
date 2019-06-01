@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title></title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="/static/ui/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/static/ui/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="/static/ui/css/animate.css" rel="stylesheet">
+    <link href="/static/ui/css/style.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="file-manager">
+                        <h5>显示：</h5>
+                        <form action="{:url('admin/article/image')}">
+                            <!--<a href="" class="file-control active">所有</a>-->
+                            <a href="" class="file-control">上传文档</a>
+                            <a href="" class="file-control">上传文章</a>
+                            <a href="" class="file-control" >上传图片</a>
+                            <div class="hr-line-dashed"></div>
+                            <button class="btn btn-primary btn-block"><input type="file" class="btn btn-primary btn-block" ></button>
+                            <div class="hr-line-dashed"></div>
+                            <h5>文件夹</h5>
+                            <ul class="folder-list" style="padding: 0">
+                                <li><a href="upload.html"><i class="fa fa-folder"></i> 文件</a></li>
+                                <li><a href="image.html"><i class="fa fa-folder"></i> 图片</a></li>
+                            </ul>
+                        </form>
+
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 全局js -->
+{include file="common/js"}
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.file-box').each(function () {
+            animationHover(this, 'pulse');
+        });
+    });
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改一篇文章</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    {include file='common/css'}
+    <link href="/static/ui/library/ue/themes/default/css/ueditor.css" type="text/css" rel="stylesheet">
+    <link href="/static/ui/library/webuploader/webuploader.css" type="text/css" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+<div class="container wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加文章<small></small></h5>
+                    <div class="ibox-tools">
+                        <a class="reload-btn" onclick="location.reload();">
+                            <i class="fa fa-refresh"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form method="post" action="" id="form" class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">标题</label>
+                            <div class="col-sm-10">
+                                <input autocomplete="off" type="text"  value="{$info.title}" name="title" class="form-control">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">分类</label>
+                            <div class="col-sm-2">
+                                <select class="form-control m-b choose" name="category_id">
+                                    <option value="{$info.category.id}">{$info.category.name}</option>
+                                    {foreach $category as $v}
+                                    <option value="{$v.id}">{$v.name}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">内容</label>
+                            <div class="col-sm-10" >
+                                <script id="editor1" name="content" type="text/plain" >{$info.content|raw}</script>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" >缩略图</label>
+                            <div class="col-sm-10">
+                                <div id="picker">请选择封面图</div>
+                                <div id="img"><img src={$path}></div>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">署名</label>
+                            <div class="col-sm-10">
+                                <input autocomplete="off" type="text" name="author" value="{$info.author}" class="form-control">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+
+
+                        <div class="hr-line-dashed"></div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <input type="hidden" name="id" value="{$info.id}">
+                                <button class="btn btn-primary" id="btn" type="button">修改</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{include file='common/js'}
+<script src="/static/ui/library/ue/ueditor.config.js"></script>
+<script src="/static/ui/library/ue/ueditor.all.js"></script>
+<script src="/static/ui/library/webuploader/webuploader.js"></script>
+<script>
+
+    //富文本编译器
+    // var um=UM.getEditor('content');
+    var ue = UE.getEditor('editor1', {
+        serverUrl:"{:url('admin/Article/umUploadImage')}",
+        toolbars:[[
+            'fullscreen', 'source', '|', 'undo', 'redo', '|',
+            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+            'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+            'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+            'directionalityltr', 'directionalityrtl', 'indent', '|',
+            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|',
+            'link', 'unlink', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
+            'simpleupload', 'insertimage', 'emotion', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode',  'pagebreak', 'template', 'background', '|',
+            'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
+            'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
+            'print', 'preview', 'searchreplace', 'drafts', 'help'
+        ]],
+        initialFrameWidth: '100%',
+        maximumWords: 20000,
+        initialFrameHeight:'350'
+    });
+
+
+    //确认修改
+    $('#btn').click(function () {
+        // alert(1234567);
+        var data = $('#form').serialize();
+
+        layer.confirm('您确认修改吗？',{icon: 3,title:'提示'},function (E){
+            $.post('{:url("admin/Article/revise")}',data,function (e) {
+                console.log(e);
+                if (e.code){
+                    layer.alert(e.msg,{icon:1});
+                } else {
+                    layer.alert(e.msg,{icon:2});
+                }
+
+            });
+            layer.close(E);
+        })
+    });
+
+
+
+    //上传缩略图
+    var uploader = WebUploader.create({
+
+        // swf文件路径
+        swf: '/static/ui/library/webuploader/Uploader.swf',
+        // 文件接收服务端。
+        server: '{:url("admin/Article/revise")}',
+        // 选择文件的按钮。可选。
+        // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+        pick: '#picker',
+        //选中文件后自动上传
+        auto: true,
+        //可重复上传
+        duplicate:true,
+        // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+        resize: false,
+        //只允许选择图片文件
+        // accept:{
+        //     title: 'Images',
+        //     extension: 'gif,jpg,jpeg,bmp,png',
+        //     mimeTypes: 'image/*'
+        // },
+        // //线程数
+        // threads: 1,
+        // //单个文件大小限制
+        // fileSingleSizeLimit: 1048576,
+        // //上传文件数量限制
+        // fileNumLimit:1,
+    });
+    //上传成功
+    uploader.on( 'uploadSuccess', function(file, res) {
+        console.log(res);
+        // console.log(file)
+        if (res.code){
+            $('#img').append('<img  style="height:60px;"  src="'+res.min+'">');
+            $('#thumb').val(res.thumb);
+            $('#minthumb').val(res.min);
+        }else {
+            layer.alert(res.info,{icon:2})
+        }
+    });
+
+</script>
+</body>
+</html>
