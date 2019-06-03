@@ -254,9 +254,9 @@
                 <ol class="breadcrumb d-none d-md-flex">
                     <li class="breadcrumb-item"><a href="http://bbs.uihacker.com/" aria-label="首页"><i
                             class="icon-home"></i></a></li>
-                    <li class="breadcrumb-item"><a href="http://bbs.uihacker.com/?forum-1.htm">发帖交流</a></li>
-                    <li class="breadcrumb-item active"><a href="http://bbs.uihacker.com/?thread-115.htm"
-                                                          title="首页返回主题第一页">{$articleList.title}</a></li>
+                    <li class="breadcrumb-item"><a href="{:url('index/index/chat')}">发帖交流</a></li>
+                    <li class="breadcrumb-item active"><a href=""
+                                                          title="首页返回主题第一页">{$info.title}</a></li>
 
                 </ol>
                     <a>
@@ -274,13 +274,13 @@
 
 
                             <div class="media-body">
-                                <h4 class="break-all">{$articleList.title}</h4>
-                                <div class="d-flex justify-content-between small">{$articleList.content|raw}<div>
+                                <h4 class="break-all">{$info.title}</h4>
+                                <div class="d-flex justify-content-between small">{$info.content|raw}<div>
 								<span class="username">
-									<a href="" class="text-muted font-weight-bold">{$articleList.author}</a>
+									<a href="" class="text-muted font-weight-bold">{$info.author}</a>
 								</span>
                                         <!--<span class="date text-grey ml-2">3月前</span>-->
-                                        <span class="text-grey ml-2"><i class="icon-eye"></i>阅读量:{$articleList.hits}</span>
+                                        <span class="text-grey ml-2"><i class="icon-eye"></i>阅读量:{$info.hits}</span>
 
                                     </div>
                                     <div>
@@ -585,7 +585,7 @@
             <div class="col-lg-3 d-none d-lg-block aside">
 
                 <a role="button" class="btn btn-primary btn-block mb-3"
-                   href="http://bbs.uihacker.com/?thread-create-1.htm">发新帖</a>
+                   href="{:url('index/Article/add')}">发新帖</a>
 
                 <div class="card card-user-info">
                     <div class="m-3 text-center">

@@ -20,6 +20,9 @@ class Index extends Controller
 
         $id = $re->param('id');
 
+
+
+
         if ($id == 0){
             $where = [];
         }else{
@@ -44,35 +47,29 @@ class Index extends Controller
     //发帖交流详情
     public function show()
     {
-        $re = $this->request;
-        $id = $re->param('id');
+        $category = $this->categoryList(1);
+
+        //文章id
+        $id = $this->request->param('id');
 
 
+        $info = article::get($id);
 
-        if ($id == 0){
-            $where = [];
-        }else{
-            $where['category_id'] = $id;
-        }
+        $this->assign('info', $info);
 
-        $this->assign('id',$id);
+        //更新阅读量
+        $info->setInc('hits');
 
-        $article = article::where($where)->find();
-
-        $this->assign('articleList',$article);
-
-        $category = category::where('pid',0)->select();
-        $this->assign('categoryList',$category);
-        $article->setInc('hits');
-        $this->assign('id',$id);
+//        $this->success($category);
         return $this->fetch();
     }
 
 
 
 
+
     //分类
-    protected function categoryLast($id)
+    protected function categoryList($id)
     {
         $category = category::where('pid',$id)->select();
         $this->assign('category',$category);

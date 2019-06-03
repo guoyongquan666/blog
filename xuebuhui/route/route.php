@@ -34,7 +34,7 @@ Route::get('admin-list-category', 'admin/Index/categoryList');
 
 //删除文章
 Route::get('admin-list-delete', 'admin/Index/delete');
-//修改文章(有bug)
+//修改文章(有错误)
 Route::get('admin-list-revise', 'admin/Index/revise');
 
 //图片管理
@@ -47,11 +47,14 @@ Route::rule('admin-image-category', 'admin/Image/getImageCategory')->method('GET
  * 前台
  */
 //前台首页
-Route::rule('xuebuhui', 'index/Index/index')->method('GET,POST');
+Route::rule('/', 'index/Index/index')->method('GET,POST');
 //发帖交流
-Route::rule('chat', 'index/Index/chat')->method('GET,POST');
+Route::rule('chat/[:id]$', 'index/Index/chat')->method('GET,POST');
 //发帖详情
-Route::get('chat/[:id]$', 'index/index/show');
+Route::get('chat/show/[:id]$', 'index/index/show');
+//发新帖
+Route::get('add', 'index/Article/add');
+
 //前台注册
 Route::rule('Sign/on', 'index/Sign/on')->method('GET,POST');
 //前台登录
