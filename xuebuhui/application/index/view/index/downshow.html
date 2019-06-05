@@ -153,15 +153,15 @@
     <script src="/static/blog/show/ca-pub-6635894063012967.js"></script>
     <script async="" src="/static/blog/show/f(5).txt"></script>
     <!--<script>-->
-        <!--(adsbygoogle = window.adsbygoogle || []).push({-->
-            <!--google_ad_client: "ca-pub-6635894063012967",-->
-            <!--enable_page_level_ads: true-->
-        <!--});-->
+    <!--(adsbygoogle = window.adsbygoogle || []).push({-->
+    <!--google_ad_client: "ca-pub-6635894063012967",-->
+    <!--enable_page_level_ads: true-->
+    <!--});-->
     <!--</script>-->
     <link rel="preload" href="/static/blog/show/f(6).txt" as="script">
     <script type="text/javascript" src="/static/blog/show/f(6).txt"></script>
     <!--<link rel="preload" href="http://pagead2.googlesyndication.com/pagead/js/r20190528/r20190131/show_ads_impl.js"-->
-          <!--as="script">-->
+    <!--as="script">-->
 </head>
 
 <body>
@@ -185,35 +185,34 @@
 
         <a class="navbar-brand text-truncate" href="{:url('index/Index/index')}">
             <img src="/static/blog/show/logo.png" class="logo-2">
-            <span class="hidden-lg">发帖交流</span>
+            <span class="hidden-lg">软件下载</span>
         </a>
 
 
         <a class="navbar-brand hidden-lg" href="{:url('index/Sign/in')}" aria-label="登录"> <i
-                class=" icon"></i>登录</a>
+                class="icon-user icon"></i></a>
 
 
         <div class="collapse navbar-collapse" id="nav">
             <!-- 左侧：版块 -->
             <ul class="navbar-nav mr-auto">
 
-                <li class="nav-item home" fid="0" data-active="fid-0"><a class="nav-link"
-                                                                         href="{:url('index/Index/index')}"><i
+                <li class="nav-item home " fid="0" data-active="fid-0"><a class="nav-link" href="{:url('index/Index/index')}"><i
                         class="icon-home d-md-none"></i> 首页</a></li>
 
 
-                <li class="nav-item active" fid="1" data-active="fid-1">
-                    <a class="nav-link" href="{:url('index/index/chat')}"><i
+                <li class="nav-item" fid="1" data-active="fid-1">
+                    <a class="nav-link" href="{:url('index/Index/chat')}"><i
                             class="icon-circle-o d-md-none"></i> 发帖交流</a>
                 </li>
 
-                <li class="nav-item" fid="4" data-active="fid-4">
+                <li class="nav-item active" fid="4" data-active="fid-4">
                     <a class="nav-link" href="{:url('index/Index/download')}">
                         <i class="icon-circle-o d-md-none"></i> 软件下载</a>
                 </li>
 
                 <li class="nav-item" fid="6" data-active="fid-6">
-                <a class="nav-link" href="{:url('index/index/uiplug')}"><i
+                <a class="nav-link" href="{:url('index/Index/uiplug')}"><i
                 class="icon-circle-o d-md-none"></i> UI插件</a>
                 </li>
 
@@ -280,13 +279,14 @@
         <div class="row">
             <div class="col-lg-9 main">
                 <ol class="breadcrumb d-none d-md-flex">
-                    <li class="breadcrumb-item"><a></a><a href="/"><i class="fa-home" aria-hidden="true"></i>Home</a></li>
-                    <li class="breadcrumb-item"><a href="{:url('index/index/chat')}">发帖交流</a></li>
+                    <li class="breadcrumb-item"><a></a>
+                        <a href="/"><i class="fa-home" aria-hidden="true"></i>Home</a></li>
+                    <li class="breadcrumb-item"><a href="{:url('index/index/chat')}">软件下载</a></li>
                     <li class="breadcrumb-item active"><a  title="首页返回主题第一页">{$info.title}</a></li>
 
                 </ol>
-                    <a>
-                    </a>
+                <a>
+                </a>
                 <div class="card card-thread"><a>
                 </a>
                     <div class="card-body"><a>
@@ -295,7 +295,7 @@
                         <div class="media">
 
                             <a href="http://bbs.uihacker.com/?user-19.htm" tabindex="-1">
-                            <img class="avatar-3 mr-3" src="/static/blog/show/avatar.png">
+                                <img class="avatar-3 mr-3" src="/static/blog/show/avatar.png">
                             </a>
 
 
@@ -303,7 +303,8 @@
                                 <h4 class="break-all">{$info.title}</h4>
                                 <div class="d-flex justify-content-between small">{$info.content|raw}<div>
 
-                                    </div>
+
+                                </div>
                                     <div>
 
 
@@ -316,12 +317,11 @@
 
                         <div class="message break-all" isfirst="1">
 
-                          <span class="username">
+                           <span class="username">
 									<a href="" class="text-muted font-weight-bold">{$info.author}</a>
 								</span>
                             <!--<span class="date text-grey ml-2">3月前</span>-->
                             <span class="text-grey ml-2"><i class="icon"></i>阅读量:{$info.hits}</span>
-
 
 
                         </div>
@@ -740,7 +740,7 @@
     var forumarr = {
         "1": "发帖交流",
         "4": "软件下载",
-        "6": "Sketch插件",
+        "6": "UI插件",
         "7": "素材资源",
         "8": "问题汇总",
         "5": "论坛帮助"
@@ -873,7 +873,7 @@
 <div id="scroll_to_top" class="d-fixed"
      style="position: fixed; bottom: 80px; right: 10px; width: 70px; height: 70px; display: none;">
     <a href="javascript:void(0);"
-       style="width: 70px; height: 70px; display: inline-block; background: url(plugin/xn_top/scroll_top.png) no-repeat; outline: none;"
+       style="width: 70px; height: 70px; display: inline-block; background: url(/static/blog/black/111.png) no-repeat; outline: none;"
        title="返回顶部"></a>
 </div>
 
@@ -1143,7 +1143,7 @@
 </script>
 </body>
 <!--<iframe id="google_shimpl" style="display: none;"-->
-        <!--src="/static/blog/show/saved_resource(6).html"></iframe>-->
+<!--src="/static/blog/show/saved_resource(6).html"></iframe>-->
 <!--<iframe id="google_esf" name="google_esf" src="/static/blog/show/zrt_lookup.html"-->
-        <!--data-ad-client="ca-pub-6635894063012967" style="display: none;"></iframe>-->
+<!--data-ad-client="ca-pub-6635894063012967" style="display: none;"></iframe>-->
 </html>

@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<!-- saved from url=(0024)http://bbs.uihacker.com/ -->
+<!-- saved from url=(0036)http://bbs.uihacker.com/?forum-6.htm -->
 <html lang="zh-cn">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="UI,UI黑客,sketch,设计,web">
-    <meta name="description" content="工作中会遇到很多设计问题各位设计师可以在这里提问、交流、解答UI黑客官网www.xuebuhui.com本站所有软件均来源于网络，仅供学习使用。更多设计干货文章请关注UI黑客公众号">
+
+
+    <meta name="description" content="UI相关插件下载和使用方法">
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 
-    <title>编程-学不会</title>
+    <title>________________</title>
 
 
     <link rel="shortcut icon" href="http://bbs.uihacker.com/view/img/favicon.ico">
@@ -47,11 +50,11 @@
             text-decoration: none;
         }
     </style>
-    <link rel="stylesheet" href="/static/blog/black/bootstrap.css">
+    <link rel="stylesheet" href="/static/blog/UI/bootstrap.css">
 
 
-    <link rel="stylesheet" href="/static/blog/black/bootstrap-bbs.css">
-    <link rel="stylesheet" href="/static/blog/black/huux-notice.css" name="huux_notice">
+    <link rel="stylesheet" href="/static/blog/UI/bootstrap-bbs.css">
+    <link rel="stylesheet" href="/static/blog/UI/huux-notice.css" name="huux_notice">
 
     <style>
         /*
@@ -145,81 +148,91 @@
     </style>
     <style></style>
 
-    <script src="/static/blog/black/hm.js"></script>
-    <script src="/static/blog/black/osd.js"></script>
-    <script src="/static/blog/black/ca-pub-6635894063012967.js"></script>
-    <script async="" src="/static/blog/black/f(5).txt"></script>
+    <script src="/static/blog/UI/hm.js"></script>
+    <script src="/static/blog/UI/osd.js"></script>
+    <script src="/static/blog/UI/ca-pub-6635894063012967.js"></script>
+    <script async="" src="/static/blog/UI/f.txt"></script>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
             google_ad_client: "ca-pub-6635894063012967",
             enable_page_level_ads: true
         });
     </script>
-    <link rel="preload" href="/static/blog/black/f(6).txt" as="script">
-    <script type="text/javascript" src="/static/blog/black/f(6).txt"></script>
-    <!--<link rel="preload" href="" as="script">-->
+    <link rel="preload" href="http://pagead2.googlesyndication.com/pagead/js/r20190530/r20190131/show_ads_impl.js"
+          as="script">
 </head>
 
 <body>
 
 
+<!--
+    轻论坛导航：默认头部
+    Bootstrap 4.0 推荐的 PC/Mobile 公共写法
+    优点：公用性强
+    缺点：结构稍微有点复杂
+-->
+
 
 <header class="navbar navbar-expand-lg navbar-dark bg-dark" id="header">
     <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="navbar_collapse" aria-expanded="false" aria-label="展开菜单">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav"
+                aria-controls="navbar_collapse" aria-expanded="false" aria-label="展开菜单">
             <span class="navbar-toggler-icon"></span>
         </button>
 
 
-        <a class="navbar-brand text-truncate" href="">
-            <img src="/static/blog/black/logo.png" class="logo-2">
+        <a class="navbar-brand text-truncate" href="{:url('index/Index/index')}">
+            <img src="/static/blog/UI/logo.png" class="logo-2">
+            <span class="hidden-lg">UI插件</span>
         </a>
 
 
-        <a class="navbar-brand hidden-lg" href="{:url('index/Sign/in')}" aria-label="登录">
-            <i class="icon-user icon"></i>
-        </a>
-
+        <a class="navbar-brand hidden-lg" href="{:url('index/Sign/in')}" aria-label="登录"> <i
+                class="icon-user icon"></i></a>
 
 
         <div class="collapse navbar-collapse" id="nav">
             <!-- 左侧：版块 -->
             <ul class="navbar-nav mr-auto">
 
-                <li class="nav-item home active" fid="0" data-active="fid-0">
-                    <a class="nav-link" href="{:url('index/Index/index')}">
-                        <i class="icon-home d-md-none"></i> 首页</a>
-                </li>
+                <li class="nav-item home" fid="0" data-active="fid-0">
+                    <a class="nav-link" href="/"><i
+                        class="icon-home d-md-none"></i> 首页</a></li>
+
+
                 <li class="nav-item" fid="1" data-active="fid-1">
-                    <a class="nav-link" href="{:url('index/Index/chat')}">
-                        <i class="icon-circle-o d-md-none"></i> 发帖交流</a>
-                </li>
-                <li class="nav-item" fid="4" data-active="fid-4">
-                    <a class="nav-link" href="{:url('index/Index/download')}">
-                        <i class="icon-circle-o d-md-none"></i> 软件下载</a>
+                    <a class="nav-link" href="{:url('index/Index/chat')}"><i
+                            class="icon-circle-o d-md-none"></i> 发帖交流</a>
                 </li>
 
-                <li class="nav-item" fid="6" data-active="fid-6">
-                <a class="nav-link" href="{:url('index/Index/uiplug')}"><i
-                class="icon-circle-o d-md-none"></i> UI插件</a>
+
+                <li class="nav-item" fid="4" data-active="fid-4">
+                    <a class="nav-link" href="{:url('index/Index/download')}"><i
+                            class="icon-circle-o d-md-none"></i> 软件下载</a>
+                </li>
+
+
+                <li class="nav-item active" fid="6" data-active="fid-6">
+                    <a class="nav-link" href="{:url('index/Index/uiplug')}"><i
+                            class="icon-circle-o d-md-none"></i> UI插件</a>
                 </li>
 
 
                 <!--<li class="nav-item" fid="7" data-active="fid-7">-->
-                <!--<a class="nav-link" href="http://bbs.uihacker.com/?forum-7.htm"><i-->
-                <!--class="icon-circle-o d-md-none"></i> 素材资源</a>-->
+                    <!--<a class="nav-link" href="http://bbs.uihacker.com/?forum-7.htm"><i-->
+                            <!--class="icon-circle-o d-md-none"></i> 素材资源</a>-->
                 <!--</li>-->
 
 
                 <!--<li class="nav-item" fid="8" data-active="fid-8">-->
-                <!--<a class="nav-link" href="http://bbs.uihacker.com/?forum-8.htm"><i-->
-                <!--class="icon-circle-o d-md-none"></i> 问题汇总</a>-->
+                    <!--<a class="nav-link" href="http://bbs.uihacker.com/?forum-8.htm"><i-->
+                            <!--class="icon-circle-o d-md-none"></i> 问题汇总</a>-->
                 <!--</li>-->
 
 
                 <!--<li class="nav-item" fid="5" data-active="fid-5">-->
-                <!--<a class="nav-link" href="http://bbs.uihacker.com/?forum-5.htm"><i-->
-                <!--class="icon-circle-o d-md-none"></i> 论坛帮助</a>-->
+                    <!--<a class="nav-link" href="http://bbs.uihacker.com/?forum-5.htm"><i-->
+                            <!--class="icon-circle-o d-md-none"></i> 论坛帮助</a>-->
                 <!--</li>-->
 
 
@@ -229,6 +242,7 @@
 
                 {if $Request.session.userLoginInfo}
                 <li class="nav-item"><a style="color: greenyellow; text-decoration-line: none" href="">欢迎您：{$Request.session.userLoginInfo.nickname}<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></a><a class="btn btn-danger" href="{:url('index/Sign/out')}"><i class="icon"></i> 退出</a></li>
+
 
                 {else /}
                 <li class="nav-item hidden-lg">
@@ -245,36 +259,84 @@
 </header>
 
 <main id="body">
-
     <div class="container">
 
 
         <div class="row">
             <div class="col-lg-9 main">
-
-                <a></a>
-                <div class="card card-threadlist"><a>
+                <a> </a>
+                <ol class="breadcrumb d-none d-md-flex"><a>
                 </a>
-                    <div class="card-header"><a>
-                    </a>
-                        <ul class="nav nav-tabs card-header-tabs"><a>
-                        </a>
-                            <li class="nav-item"><a>
-                            </a><a class="nav-link active" href="">全部</a>
+                    <li class="breadcrumb-item"><a></a><a href="/"><i class="fa-home" aria-hidden="true"></i>首页</a></li></a></li>
+                    <li class="breadcrumb-item active"><a href="{:url('index/index/uiplug')}">UI插件</a></li>
+                </ol>
+                <style>
+                    table.nav_tag_list {
+                        margin-bottom: 0.2rem;
+                    }
+
+                    table.nav_tag_list td {
+                        padding: 0.3rem;
+                    }
+
+                    table.nav_tag_list td a {
+                        margin-right: 0.5rem;
+                    }
+
+                    .nav_tag_list .active {
+                        font-weight: 800;
+                    }
+                </style>
+
+                <table class="small nav_tag_list">
+                </table>
+
+
+                <div class="card card-threadlist">
+                    <div class="card-header d-flex justify-content-between">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="http://bbs.uihacker.com/?forum-6.htm">最新</a>
                             </li>
-                            <!--<li class="nav-item">-->
-                                <!--<a class="nav-link  " href="">精华</a>-->
-                            <!--</li>-->
+                            <li class="nav-item">
+                                <a class="nav-link nav-digest  "
+                                   href="http://bbs.uihacker.com/?forum-6-1.htm&amp;digest=1"><i
+                                        class="icon flash"></i> 精华</a>
+                            </li>
                         </ul>
+
+                        <div class="text-right text-small pt-1 card-header-dropdown">
+                            <div class="btn-toolbar" role="toolbar">
+                                <span class="text-muted">排序：</span>
+                                <div class="dropdown btn-group">
+                                    <a href="http://bbs.uihacker.com/?forum-6.htm#" class="dropdown-toggle"
+                                       id="ordery_dropdown_menu" data-toggle="dropdown" aria-haspopup="true"
+                                       aria-expanded="false">
+                                        回帖时间
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right"
+                                         aria-labelledby="ordery_dropdown_menu">
+                                        <a class="dropdown-item"
+                                           href="http://bbs.uihacker.com/?forum-6-1.htm&amp;orderby=tid&amp;digest=0"><i
+                                                class="icon text-primary "></i>&nbsp; 发帖时间</a>
+                                        <a class="dropdown-item"
+                                           href="http://bbs.uihacker.com/?forum-6-1.htm&amp;orderby=lastpid&amp;digest=0"><i
+                                                class="icon text-primary icon-check"></i>&nbsp; 回帖时间</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="card-body">
                         <ul class="list-unstyled threadlist mb-0">
 
+                            {foreach $articleList as $v}
+                            <li class="media thread tap  " data-href="?thread-130.htm" data-tid="130">
 
-                            <li class="media thread tap top_3 " data-href="?thread-13.htm" data-tid="13">
-
-                                <a href="" tabindex="-1" class="ml-1 mt-1 mr-3">
-                                    <img class="avatar-3" src="/static/blog/black/1.png">
+                                <a href="http://bbs.uihacker.com/?user-1.htm" tabindex="-1" class="ml-1 mt-1 mr-3">
+                                    <img class="avatar-3" src="/static/blog/UI/1.png">
                                 </a>
 
 
@@ -282,15 +344,7 @@
                                     <div class="subject break-all">
 
 
-                                        <i class="icon-top-3"></i>
-
-
-                                        <a href="" target="_blank" title="论坛帮助"
-                                           class="text-grey haya-post-info-home-thread-forum">[论坛帮助]</a>
-                                        <a href="">如何在UI黑客论坛发图片</a>
-
-
-                                        <i class="icon-digest-3 icon-1x" aria-hidden="true" title="三级精华"></i>
+                                        <a href="http://bbs.uihacker.com/?thread-130.htm">{$v.title}</a>
 
 
                                     </div>
@@ -298,104 +352,47 @@
                                         <div>
 
 
-                                            <span class="username text-grey mr-1  hidden-sm" uid="1">UI黑客</span>
-                                            <span class="date text-grey hidden-sm">7月前</span>
-
-
-                                            <span>
-										<span class="text-grey mx-2">←</span>
-										<span class="username text-grey mr-1" uid="1">UI黑客</span>
-										<span class="text-grey">6月前</span>
-									</span>
+                                            <span class="username text-grey mr-1 " uid="1">{$v.author}</span>
+                                            <span class="date text-grey">{$v.create_time | date='Y-m-d'}</span>
 
 
                                         </div>
                                         <div class="text-muted small">
 
-                                            <span class="ml-2 d-none"><i class="icon-eye"></i> 549</span>
+                                            <!--<span class="ml-2 d-none"><i class="icon-eye"></i> 45</span>-->
 
 
-                                            <span class="ml-2"><i class="icon-eye"></i> 549</span>
+                                            <span class="ml-2"><i class="icon"></i>已查看:{$v.hits}</span>
 
 
-                                            <span class="ml-2"><i class="icon-comment-o"></i> 6</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="media thread tap  " data-href="?thread-130.htm" data-tid="130">
-
-                                <a href="" tabindex="-1" class="ml-1 mt-1 mr-3">
-                                    <img class="avatar-3" src="/static/blog/black/1.png">
-                                </a>
-
-
-                                <div class="media-body">
-                                    <div class="subject break-all font-weight-bold">
-
-
-                                        <a href="" target="_blank" title="Sketch插件"
-                                           class="text-grey haya-post-info-home-thread-forum">[Sketch插件]</a>
-                                        <a href="http://bbs.uihacker.com/?thread-130.htm">【Sketch Styles
-                                            Generator】一键批量添加图层和文字样式</a>
-
-
-                                    </div>
-                                    <div class="d-flex justify-content-between small mt-1">
-                                        <div>
-
-
-                                            <span class="username text-grey mr-1 " uid="1">UI黑客</span>
-                                            <span class="date text-grey">1天前</span>
-
-
-                                        </div>
-                                        <div class="text-muted small">
-
-                                            <span class="ml-2 d-none"><i class="icon-eye"></i> 37</span>
-
-
-                                            <span class="ml-2"><i class="icon-eye"></i> 37</span>
-
-
-                                            <span class="ml-2"><i class="icon-comment-o"></i> 0</span>
+                                            <span class="ml-2"><i class="icon"></i>回复: </span>
 
                                         </div>
                                     </div>
                                 </div>
                             </li>
-
+                            {/foreach}
                         </ul>
                     </div>
                 </div>
 
 
                 <nav class="my-3">
-                    <ul class="pagination justify-content-center flex-wrap">
-                        <li class="page-item active"><a href="" class="page-link">1</a></li>
-                        <li class="page-item"><a href="" class="page-link">2</a>
-                        </li>
-                        <li class="page-item"><a href="" class="page-link">3</a>
-                        </li>
-                        <li class="page-item"><a href="" class="page-link">▶</a>
-                        </li>
-                    </ul>
+                    <ul class="pagination justify-content-center flex-wrap"></ul>
                 </nav>
             </div>
             <div class="col-lg-3 d-none d-lg-block aside">
+
                 <a role="button" class="btn btn-primary btn-block mb-3"
                    href="{:url('index/Article/add')}">发新帖</a>
-                <div class="card card-site-info">
 
-                    <div class="m-3">
-                        <h5 class="text-center">UI黑客-设计论坛</h5>
-                        <div class="small line-height-3">
-                            <p style="text-align:center; margin-top:20px;">工作中会遇到很多设计问题<br>各位设计师可以在这里提问、交流、解答<br>UI黑客官网
-                                <a href="http://www.xuebuhui.com/" target="_blank">www.xuebuhui.com</a>
-                                <br>本站所有软件均来源于网络，仅供学习使用。<br>更多设计干货文章请关注UI黑客公众号</p>
-                            <img src="/static/blog/black/wx.jpg" style="display:block; width:200px; height:200px; margin:0 auto;">
-                        </div>
+                <div class="card card-forum-info">
+                    <div class="card-body text-center">
+                        <img class="logo-5 mb-2" src="/static/blog/UI/6.png">
+                        <h5>UI插件</h5>
+
+                        <div class="text-left line-height-2">UI相关插件下载和使用方法</div>
+
                     </div>
                     <div class="card-footer p-2">
                         <table class="w-100 small">
@@ -403,28 +400,30 @@
                             <tr align="center">
                                 <td>
                                     <span class="text-muted">主题数</span><br>
-                                    <b>49</b>
+                                    <b>10</b>
                                 </td>
                                 <td>
-                                    <span class="text-muted">帖子数</span><br>
-                                    <b>25</b>
+                                    <span class="text-muted">今日贴子</span><br>
+                                    <b>0</b>
                                 </td>
                                 <td>
-                                    <span class="text-muted">用户数</span><br>
-                                    <b>33</b>
+                                    <span class="text-muted">今日主题</span><br>
+                                    <b>0</b>
                                 </td>
-                                <td>
-                                    <span class="text-muted">在线</span><br>
-                                    <b>7</b>
-                                </td>
+
                             </tr>
                             </tbody>
                         </table>
                     </div>
+                </div>
 
+                <div style="border: 1px solid rgba(0, 0, 0, 0.125);padding-bottom:1rem;">
+                    <p style="text-align:center; margin:1rem 0;">更多设计干货文章<br>请关注UI黑客公众号</p>
+                    <img src="/static/blog/black/wx.jpg"
+                         style="display:block; width:200px; height:200px; margin:0 auto;">
                 </div>
                 <div class="form-group">
-                    <form action="" id="search_form">
+                    <form action="http://bbs.uihacker.com/?search.htm" id="search_form">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="关键词" name="keyword">
                             <div class="input-group-append">
@@ -433,8 +432,7 @@
                         </div>
                     </form>
                 </div>
-                <a>
-                </a></div>
+                <a> </a></div>
             <a>
             </a></div>
         <a>
@@ -442,9 +440,7 @@
 
         </a></div>
     <a>
-    </a>
-</main>
-
+    </a></main>
 <a>
 
 
@@ -455,13 +451,12 @@
     </a>
         <div class="row"><a>
         </a>
-            <div class="col"><a>Powered by </a><a href="" target="_blank" class="text-muted"><b>xuebuhui BBS
-                <span>4.0.4
-                </span>
-            </b></a>xuebuhui版权所有
+            <div class="col"><a>
+                Powered by </a><a href="http://bbs.xiuno.com/" target="_blank" class="text-muted"><b>Xiuno BBS <span>4.0.4</span></b></a>
+                UI黑客版权所有
             </div>
             <div class="col text-right">
-                <!--Processed: <b>0.015</b>, SQL: <b>29</b>-->
+                <!--Processed: <b>0.018</b>, SQL: <b>29</b>-->
                 更多UI资源、技术、经验、工具请查看UI黑客主站 www.uihacker.com
             </div>
         </div>
@@ -473,33 +468,31 @@
 <![endif]-->
 
 
-<script src="/static/blog/black/bbs.js"></script>
-<script src="/static/blog/black/jquery-3.1.0.js"></script>
-<script src="/static/blog/black/popper.js"></script>
-<iframe id="google_osd_static_frame_3878568077772" name="google_osd_static_frame"
-        style="display: none; width: 0px; height: 0px;" src="/static/blog/black/saved_resource(3).html"></iframe>
-<script src="/static/blog/black/bootstrap.js"></script>
-<script src="/static/blog/black/xiuno.js"></script>
-<script src="/static/blog/black/bootstrap-plugin.js"></script>
-<script src="/static/blog/black/async.js"></script>
-<script src="/static/blog/black/form.js"></script>
+<script src="/static/blog/UI/bbs.js"></script>
+<script src="/static/blog/UI/jquery-3.1.0.js"></script>
+<script src="/static/blog/UI/popper.js"></script>
+<script src="/static/blog/UI/bootstrap.js"></script>
+<script src="/static/blog/UI/xiuno.js"></script>
+<script src="/static/blog/UI/bootstrap-plugin.js"></script>
+<script src="/static/blog/UI/async.js"></script>
+<script src="/static/blog/UI/form.js"></script>
 <script>
     var debug = DEBUG = 0;
     var url_rewrite_on = 0;
     var forumarr = {
         "1": "发帖交流",
         "4": "软件下载",
-        "6": "Sketch插件",
+        "6": "UI插件",
         "7": "素材资源",
         "8": "问题汇总",
         "5": "论坛帮助"
     };
-    var fid = 0;
+    var fid = 6;
     var uid = 0;
     var gid = 0;
-    xn.options.water_image_url = '';	// 水印图片 / watermark image
+    xn.options.water_image_url = 'view/img/water-small.png';	// 水印图片 / watermark image
 </script>
-<script src="/static/blog/black/bbs(1).js"></script>
+<script src="/static/blog/UI/bbs(1).js"></script>
 <script>
     // 适用于两种状态直接切换
     $('a.xpost').on('click', function () {
@@ -619,8 +612,11 @@
 </script>
 
 
-<div id="scroll_to_top" class="d-fixed" style="position: fixed; _position: absolute; bottom: 80px; right: 10px; width: 70px; height: 70px; display: none;">
-    <a href="javascript:void(0);" style="width: 70px; height: 70px; display: inline-block; background: url(/static/blog/black/111.png) no-repeat; outline: none;" title="返回顶部"></a>
+<div id="scroll_to_top" class="d-fixed"
+     style="position: fixed; _position: absolute; bottom: 80px; right: 10px; width: 70px; height: 70px; display: none;">
+    <a href="javascript:void(0);"
+       style="width: 70px; height: 70px; display: inline-block; background: url(/static/blog/black/111.png) no-repeat; outline: none;"
+       title="返回顶部"></a>
 </div>
 
 <script>
@@ -650,32 +646,22 @@
 
 
 <script>
-    $('li[data-active="fid-0"]').addClass('active');
+    $('li[data-active="fid-6"]').addClass('active');
 </script>
 
 <script>
     var tids = {
         "13": "1541650868",
         "130": "1559189152",
-        "129": "1559127035",
-        "128": "1558583095",
-        "127": "1558514722",
-        "126": "1558506132",
-        "125": "1558495956",
         "124": "1558330679",
-        "123": "1557998668",
-        "122": "1555912795",
-        "121": "1555666443",
         "120": "1555318485",
-        "116": "1554780928",
-        "115": "1551418619",
-        "117": "1551250464",
-        "114": "1549097004",
-        "113": "1549096746",
-        "112": "1549092296",
-        "111": "1549090656",
-        "110": "1549090462",
-        "109": "1549090060"
+        "37": "1545890694",
+        "32": "1544420806",
+        "31": "1543477536",
+        "30": "1543477207",
+        "24": "1539586348",
+        "22": "1539582392",
+        "21": "1539577148"
     };
     xn_read_unread(tids, 0);
 </script>
@@ -689,7 +675,4 @@
     });
 </script>
 </body>
-
-<iframe id="google_esf" name="google_esf" src="/static/blog/black/zrt_lookup.html"
-        data-ad-client="ca-pub-6635894063012967" style="display: none;"></iframe>
 </html>

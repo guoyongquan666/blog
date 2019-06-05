@@ -4,6 +4,7 @@ namespace app\index\controller;
 use app\admin\model\article;
 use app\admin\model\category;
 use think\Controller;
+use think\Db;
 
 class Index extends Controller
 {
@@ -16,28 +17,24 @@ class Index extends Controller
     //发帖交流
     public function chat()
     {
-        $re = $this->request;
+        $request = $this->request;
 
-        $id = $re->param('id');
-
-
-
+        $id = $request->param('id');
 
         if ($id == 0){
             $where = [];
         }else{
             $where['category_id'] = $id;
         }
-        $this->assign('id',$id);
 
-        $article = article::where($where)->paginate(10);
-//      return  print_r($article);
-        $this->assign('articleList',$article);
-
-        $category= category::where('pid',0)->select();
-
+        $category = category::where('pid',0)->select();
 
         $this->assign('categoryList',$category);
+
+        $article = article::where('category_id',36)->select();
+
+        $this->assign('articleList',$article);
+        $this->assign('id',$id);
 
 
 
@@ -60,9 +57,101 @@ class Index extends Controller
         //更新阅读量
         $info->setInc('hits');
 
-//        $this->success($category);
+
         return $this->fetch();
     }
+
+
+    //软件下载
+
+    public function download()
+    {
+       $request = $this->request;
+
+       $id = $request->param('id');
+
+       if ($id == 0){
+           $where = [];
+       }else{
+           $where['category_id'] = $id;
+       }
+
+       $category = category::where('pid',0)->select();
+
+       $this->assign('category',$category);
+
+        $article = article::where('category_id',39)->select();
+
+        $this->assign('article',$article);
+        $this->assign('id',$id);
+
+
+
+        //todo  获取时间戳 计算出相差时间
+        // $tmpdate = time();
+
+        return $this->fetch();
+    }
+
+    //软件下载详情
+    public function downshow()
+    {
+
+        $category = $this->categoryList(1);
+
+        //文章id
+        $id = $this->request->param('id');
+
+
+        $info = article::get($id);
+
+
+        $this->assign('info', $info);
+
+        //更新阅读量
+        $info->setInc('hits');
+
+
+        return $this->fetch();
+    }
+
+    //UI插件
+    public function uiplug()
+    {
+        $request = $this->request;
+        $id = $request->param('id');
+        if ($id == 0){
+            $where = [];
+        }else{
+            $where['category_id'] = $id;
+        }
+
+         $category =  category::where('pid',0)->select();
+        $this->assign('categoryList',$category);
+
+        $article = article::where('category_id',41)->select();
+        $this->assign('articleList',$article);
+
+        $this->assign('id',$id);
+
+        return $this->fetch();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -76,5 +165,7 @@ class Index extends Controller
         return $category;
 
     }
+
+
 
 }

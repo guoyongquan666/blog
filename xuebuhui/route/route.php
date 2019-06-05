@@ -52,8 +52,28 @@ Route::rule('/', 'index/Index/index')->method('GET,POST');
 Route::rule('chat/[:id]$', 'index/Index/chat')->method('GET,POST');
 //发帖详情
 Route::get('chat/show/[:id]$', 'index/index/show');
+
+//软件下载
+Route::rule('download/[:id]$', 'index/Index/download')->method('GET,POST');
+//软件下载详情
+Route::get('download/downshow/[:id]$', 'index/index/downshow');
+
+//UI插件
+Route::rule('uiplug/[:id]$', 'index/Index/uiplug')->method('GET,POST');
+
+
+//软件下载
+Route::rule('download/[:id]$', 'index/Index/download')->method('GET,POST');
+
+
+
+
+
+
+
+
 //发新帖
-Route::get('add', 'index/Article/add');
+Route::rule('add', 'index/Article/add')->method('GET,POST');
 
 //前台注册
 Route::rule('Sign/on', 'index/Sign/on')->method('GET,POST');

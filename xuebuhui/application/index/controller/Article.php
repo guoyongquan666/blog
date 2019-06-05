@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: qingyun
- * Date: 19/6/3
- * Time: 下午8:30
+ * Date: 19/6/5
+ * Time: 上午10:02
  */
 
 namespace app\index\controller;
@@ -11,12 +11,13 @@ namespace app\index\controller;
 use app\admin\model\category;
 use think\Controller;
 
-class Article extends Controller
+class Article extends  Controller
 {
     //发新帖
+
+
     public function add()
     {
-
         $request = $this->request;
         //如果是POST请求
         if ($request->isPost()){
@@ -50,8 +51,8 @@ class Article extends Controller
             $data['aid'] = session('adminLoginInfo')->id;
             //入库
 
-            if ( article::create($data)){
-                $this->success('添加成功', url('admin/Article/lists'));
+            if (\app\admin\model\article::create($data)){
+                $this->success('添加成功', url('/'));
             }else{
                 $this->error('添加失败');
             }
@@ -62,13 +63,35 @@ class Article extends Controller
         if ($request->isGet()){
 
             //获取分类信息
-            $all = category::where('pid', 0)->all();
+           $all= category::where('pid',0)->all();
 
 
             $this->assign('all', $all);
             return $this->fetch();
         }
 
-
     }
+
+
+
+    /**
+     * 使用ajax获取文章分类
+     */
+    public function ajaxCategory()
+    {
+//        $request = $this->request;
+        $pid = $this->request->param('id', 0);
+        $data = category::where('pid', $pid)->select();
+
+        return json($data);
+
+//        if ($request->isAjax()){
+//            $pid =$request->param('id',0);
+//            if ($pid != 0){
+//                $data = category::where('pid',$pid)->select();
+//                return json($data);
+//            }
+//        }
+    }
+
 }
