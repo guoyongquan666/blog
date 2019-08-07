@@ -1,0 +1,43 @@
+.pricepage{
+  color: grey;
+	font-size: 30rpx;
+}
+.price{
+  color: red;
+  font-size: 30rpx;
+}
+
+.namepage{
+  color: grey;
+	font-size: 30rpx;
+}
+.name{
+  color: red;
+  font-size: 30rpx;
+}
+.goods_collect_img {
+  width: 30px;
+  height: 30px;
+margin-top: 317px;
+margin-right: 70px;
+margin-bottom: -22px;
+
+}
+.goods_collect_btn {
+  height: 40px;
+  width: 70px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  border-left: 1px solid #E5E5E5;
+  text-align: center;
+  font-size: 12px;
+  line-height: 14px;
+}
+.fa{
+  margin-left: 10px;
+}
+.detailg{
+  width: 750rpx;
+  height: 750rpx;
+}

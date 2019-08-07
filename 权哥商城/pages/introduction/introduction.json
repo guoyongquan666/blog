@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "v-tab": "/dist/tab/index",
+    "v-tabs": "/dist/tabs/index",
+    "van-goods-action": "/dist/goods-action/index",
+    "van-goods-action-icon": "/dist/goods-action-icon/index",
+    "van-goods-action-button": "/dist/goods-action-button/index"
+  }
+}

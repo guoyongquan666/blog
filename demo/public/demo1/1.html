@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+    // var a = 12;
+    //
+    // console.log(typeof a);
+    // console.log(typeof a.toString());
+    //
+    // a.xxx = function(){
+    //
+    //     console.log('xxxxx');
+    //
+    // };
+    //
+    // a.xxx();
+    //
+    //
+    //
+    // Number;
+    //
+    // String;
+    //
+    // //包装对象
+    //
+    // var b = {};
+    //
+    // b.aaa = function () {
+    //
+    //     console.log('aaaaa');
+    // };
+    //
+    // b.aaa();
+
+
+    // a();
+    // b();
+    //
+    // //函数声明提前
+    //
+    // //声明式获取一个函数
+    // function a() {
+    //     console.log(1);
+    // }
+    //
+    // // 通过表达式获取一个函数
+    // var b = function () {
+    //
+    //     console.log(2);
+    // };
+
+
+    // 函数名和变量名 本质上来说，没有太大区别
+    // function a() {
+    //     console.log(1);
+    // }
+    // console.log(typeof a);
+    // a = 2;
+    // console.log(typeof a);
+
+
+    //获取一个马上调用的函数
+    // ~、!、-、+ 都可以用来解决语法错误
+    // !function (a) {
+    //     console.log(a);
+    // }(1);
+    //
+    // var b = function (a) {
+    //     console.log(a);
+    // };
+    // b(1);
+
+
+
+    // js 的作用域链
+    // js的作用域是链式向上的
+    // 会在使用变量的时候，尽可能的在自己的作用域内寻找，如果找不到，则向上级作用域寻找
+    // 只要找到，则停止向上寻找
+    // 如果找到最顶层作用域，还未找到，则报错
+
+    // var a = 5;
+    // function f(){
+    //     var a = 4;
+    //     function f1() {
+    //         // var a = 3;
+    //         console.log(a);
+    //     }
+    //
+    //     f1();
+    // }
+    // f();
+
+
+    // 形参也是作用域链中变量寻找的一部分
+    // var a  = 1;
+    // function f(a, b) {
+    //     console.log(a); // undefined
+    //     console.log(b); // undefined
+    //
+    //     b = 2;
+    //     console.log(b); // 2
+    //     console.log(c); // undefined
+    //     var c = 3;
+    //     console.log(c); // 3
+    //
+    //     c = function () {
+    //
+    //     }
+    // }
+    // f();
+
+
+
+    // var a  = 1;
+    //
+    // function f(a, b) {
+    //     console.log(a); // 111
+    //     console.log(b); // 222
+    //
+    //     b = 2;
+    //     console.log(b); // 2
+    //     console.log(c); // undefined
+    //     var c = 3;
+    //     console.log(c); // 3
+    //     c = function () {}
+    // }
+    // f(111, 222);
+
+
+
+
+
+    // 函数的执行分成两个步骤，词法分析步骤、代码执行步骤
+
+    // function func(age, xxx) {
+    //
+    //     console.log(age);
+    //     var age = 25;
+    //     console.log(age);
+    //     console.log(ccc);
+    //     var ccc = 30;
+    //     console.log(age);
+    //
+    //     function age() {
+    //     }
+    //     console.log(age);
+    //
+    // }
+    //
+    // func(18);
+
+    // AO = {}
+    // 词法分析：
+    // 1. 分析形参 AO  = {age: undefined, xxx: undefined}
+    // 2. 接收实参， 覆盖原来的形参值 AO = {age: 18, xxx: undefined}
+    // 3. 分析函数内部的变量声明。
+    //    如果新声明的变量，在前面的分析结果中不存在，则在AO对象中添加该属性，其值为undefined
+    //    如果新声明的变量，在前面的分析结果中已存在，则不作任何改变
+    //    AO = {age: 18, xxx: undefined, ccc: undefined}
+    // 4. 分析函数声明
+    //    如果，声明的函数名，在前面的分析结果中已存在，则覆盖上一步中AO对象中的该属性值
+    //    AO = {age: function(){}, xxx: undefined, ccc: undefined}
+
+    // 代码执行步骤：
+    // 144行： 打印此时AO对象中的age属性值
+    // 145行： 给AO对象中的age属性赋值25 AO = {age: 25, xxx: undefined, ccc: undefined}
+    // 146行： 打印此时AO对象中的age属性值
+    // 147行： 打印此时AO对象中的ccc属性值
+    // 148行： 打印此时AO对象中的age属性值
+    // 153行： 打印此时AO对象中的age属性值
+
+
+
+    // function func(age) {
+    //     var age;
+    //     console.log(age);  // function
+    //     var age = 25;
+    //     console.log(age);  // 25
+    //     function age() {
+    //     }
+    //     console.log(age); // 25
+    //
+    // }
+    // func(18);
+
+    // AO = {age: undefined}
+    // AO = {age: 18}
+    // AO = {age: function(){}}
+
+
+
+
+    // function func(age) {
+    //     var age;
+    //     console.log(age); // function
+    //     var age = 25;
+    //     console.log(age);  // 25
+    //     function age() {
+    //         console.log(age); // undefined 25
+    //     }
+    //     age(); //此时的age其实是个数值型的25，不能被调用，所以报错
+    //     console.log(age); // 25
+    //
+    // }
+    // func(18);
+
+
+
+
+    // function func(age) {
+    //     var age;
+    //     console.log(age); // function
+    //     function age() {
+    //         console.log(age); // function
+    //     }
+    //     age();
+    //     console.log(age); // function
+    //
+    // }
+    // func(18);
+
+    // AO = {age: undefined}
+    // AO = {age: 18}
+    // AO = {age: function(){}}
+
+
+
+
+    // function f() {
+    //     console.log(arguments[2]);
+    // }
+    //
+    // f(1, 2, 666)
+
+
+
+    // 闭包： 函数内部可以访问外部变量的能力，且常驻内存
+
+    // function f() {
+    //
+    //     var a = 1;
+    //
+    //     function f1() {
+    //
+    //         console.log(a);
+    //     }
+    //
+    //     return f1;
+    // }
+    //
+    // var x = f();
+    //
+    // x();
+
+
+
+    // try {
+    //     var a = 1;
+    //
+    //     // if (a == 1){
+    //     //     // throw {a:11111};
+    //     //     throw new Error('11111');
+    //     // }
+    //
+    //
+    //     a.xxx = function () {
+    //
+    //
+    //     };
+    //
+    //     a.xxx();
+    //
+    // }catch (e) {
+    //
+    //     console.log(e.message);
+    // }finally {
+    //     console.log(111)
+    // }
+
+
+
+
+
+
+    // 函数
+    // 对象
+    // 构造函数（类）
+    function f(a, b) {
+
+        var aa = 11;
+
+        this.name = '狗蛋';
+        this.age = 18;
+        this.run = function (a) {
+
+            console.log('我的速度是'+ a);
+        };
+        this.xxx = b;
+
+        this.yyy = function () {
+
+            return aa;
+        };
+
+        this.zzz = function (argu) {
+
+            aa = argu;
+        }
+        // 作为构造函数使用的时候 this指向对象本身，作为函数使用的时候this指向window对象
+        // console.log(this);
+    }
+
+    // function f1(a) {
+    //
+    //     console.log(a)
+    // }
+    //
+    // f1(f);
+    //
+    // f();
+
+    // var a = {};
+
+    /**
+     * new 一个构造函数的时候：
+     * 先产生一个空对象
+     * 然后将构造函数中的this指向该空对象
+     * 然后执行构造函数
+     * 返回对象
+     */
+    var a = new f('5m/s', '哈哈哈哈哈');
+    console.log(a);
+
+    console.log(a.yyy());
+
+    a.zzz('你好');
+
+    console.log(a.yyy());
+    // a.run('3m/s');
+    // console.log(a.xxx)
+
+
+    // f(111, 2222)
+
+
+
+
+    //js中函数可以被覆盖声明
+    // function f1() {
+    //     console.log(1111);
+    // }
+    //
+    // function f1() {
+    //     console.log(2222);
+    // }
+    //
+    // f1();
+
+
+</script>
+
+</body>
+</html>

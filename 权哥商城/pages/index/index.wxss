@@ -1,0 +1,57 @@
+.txt{
+  font-size: 12px;
+}
+#image{
+  width:  750rpx;
+  height: 350rpx;
+}
+.logo{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 20rpx;
+}
+
+.logoinfo{
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	width:150rpx; 
+	height: 150rpx; 
+}
+.logoimg{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.logotext{
+	color: #aaa;
+	font-size: 22rpx;
+}
+
+
+/* .goods{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.goods_box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.goods_text{
+  /* display: flex;
+  flex-direction: row; */
+  /* color: grey;
+	font-size: 30rpx;
+} */
+/* .goods_text_2{
+  color: red;
+  font-size: 25rpx;
+} */ 
+.sku{
+  width: 750rpx;
+  height: 750rpx;
+}

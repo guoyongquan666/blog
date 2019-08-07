@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript练习</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    //  a();  //函数声明提前
+    //  //声明式获取一个函数
+    //  function a() {
+    //     console.log(1);
+    // }
+    //  //声明式获取一个函数
+    //  var b = function () {
+    //     console.log(b);
+    // }
+
+
+    /**
+     * 函数名和变量名 本质上来说，没有太大区别
+     */
+
+    // function a() {
+    //     console.log('老子天下第一帅');
+    // }
+    // console.log(typeof a);   //function
+    // var a = 1;
+    // console.log(a);   //number
+
+    /**
+     * 获取一个马上调用的函数
+     * 符号解决语法错误 ~ ! + -
+     */
+    //
+    // ~function (a) {
+    //     console.log(a)
+    // }(1);
+    // !function (b) {
+    //     console.log(b);
+    // }(2);
+    // -function (c) {
+    //     console.log(c)
+    // }(3);
+    // +function (d) {
+    //     console.log(d)
+    // }(4);
+
+    /**
+     * JavaScript 的作用链
+     * JavaScript的作用域是链式向上的
+     * 会在使用变量的时候，尽可能的在自己的作用域内寻找，如果找不到，则向上级作用域寻找
+     * 只要找到，则停止向上寻找
+     * 如果找到最顶层作用域，还未找到，则报错
+     */
+    // var a = 5;
+    // function f() {
+    //     function f1() {
+    //         console.log(a)
+    //     }
+    //     f1()
+    // }(f())
+
+    /**
+     * 形参也是作用域链中变量寻找的一部分
+     * 如果变量寻找过程中找到的相同的形参 则认为该形参就是他的变量
+     */
+    //例子 一
+    // var a = 1;
+    // function f(a, b) {
+    //     console.log(a);  // undefined
+    //     console.log(b);  // undefined
+    //     a = 2;
+    //     console.log(a);  // 2
+    //     console.log(c);  // undefined
+    //     var c = 3;
+    //     c = function () {
+    //         console.log(c);  // 3
+    //     }(c)
+    // }f()
+
+    //例子 二
+    // var a = 1;
+    // function f(a, b) {
+    //     console.log(a); // 111
+    //     console.log(b); // 222
+    //     b = 2;
+    //     console.log(b); // 2
+    //     console.log(c); // undefined
+    //     var c = 3;
+    //     c = function () {
+    //         console.log(c) // 3
+    //     }(c)
+    //
+    // }f(111,222);
+
+    /**
+     *
+     * 函数的执行分成两个步骤，词法分析步骤、代码执行步骤
+     *
+     * AO = {}
+     * 词法分析：
+     *     1. 分析形参 AO  = {age: undefined, xxx: undefined}
+     *     2. 接收实参， 覆盖原来的形参值 AO = {age: 18, xxx: undefined}
+     *     3. 分析函数内部的变量声明。
+     *          如果新声明的变量，在前面的分析结果中不存在，则在AO对象中添加该属性，其值为undefined
+     *          如果新声明的变量，在前面的分析结果中已存在，则不作任何改变
+     *          AO = {age: 18, xxx: undefined, ccc: undefined}
+     *     4. 分析函数声明
+     *          如果，声明的函数名，在前面的分析结果中已存在，则覆盖上一步中AO对象中的该属性值
+     *           AO = {age: function(){}, xxx: undefined, ccc: undefined}
+     *     代码执行步骤：
+     *          122行： 打印此时AO对象中的age属性值
+     *          124行： 给AO对象中的age属性赋值25 AO = {age: 25, xxx: undefined, ccc: undefined}
+     *          125行： 打印此时AO对象中的age属性值
+     *          147行： 打印此时AO对象中的ccc属性值
+     *          127行： 打印此时AO对象中的age属性值
+     *          129行： 打印此时AO对象中的age属性值
+     */
+    //例子 一
+    // function func(age , xxx) {
+    //     console.log(age);   // function
+    //     var  age = 25;
+    //     console.log(age);   // 25
+    //     console.log(ccc);   // undefined
+    //     var ccc = 3;
+    //     console.log(age);   // 25
+    //     function age() {}
+    //     console.log(age)    // 25
+    // }(func(18))
+    //例子 二
+    // function func(age) {
+    //     var age;
+    //     console.log(age); // function
+    //     var age = 25;
+    //     console.log(age); // 25
+    //     function age() {}
+    //     console.log(age)  // 25
+    // }func(19)
+    //例子 三
+    // function func(age) {
+    //     var age;
+    //     console.log(age); // function
+    //     var age = 25;
+    //     console.log(age); // 25
+    //     function age() {
+    //         console.log(age);
+    //     }
+    //     age(); // 报错   此时的age其实是个数值型的25，不能被调用，所以报错
+    //     console.log(2) // 不执行
+    // }func(20)
+    //例子  四
+    // function func(age) {
+    //     console.log(age); // function
+    //     function age() {
+    //         console.log(age);  // function
+    //     }age();
+    //
+    //     console.log(age);       // function
+    // }func(21)
+
+    // function f() {
+    //     console.log(arguments[1]) // 2     arguments拿到方法里的参数
+    // }f(1 ,2 ,3)
+
+    /**
+     * 闭包: 函数内部可以访问外部变量的能力，且常驻内存
+     */
+    // function f() {
+    //     var a = 1;
+    //     function f1() {
+    //         console.log(a);  // 1
+    //     }
+    //     return f1;
+    // }
+    // var x = f();
+    // x();
+
+    // try {
+    //     var a = 1;
+    //     if (a == 1){
+    //         throw new Error('111111');
+    //     }
+    //     a.xxx = function () {
+    //
+    //     }
+    //     a.xxx();
+    // }catch (e) {
+    //     console.log(e.message);
+    // }finally {
+    //     console.log(1232453);
+    // }
+
+    /**
+     * 函数
+     * 对象
+     * 构造函数(类)
+     */
+    function f(a , b) {
+        var aa = 11;
+
+        this.name = ' 狗蛋';
+        this.age = 18;
+        this.run = function (a) {
+            console.log('我的速度是' + a)
+        }
+        this.xxx = b;
+        this.yyy = function () {
+            return aa;
+        };
+
+        this.zzz = function (argu) {
+            aa = argu;
+        }
+        // 作为构造函数使用的时候 this指向对象本身，作为函数使用的时候this指向window对象
+        // console.log(this);
+    }
+    /**
+     * new 一个构造函数的时候：
+     * 先产生一个空对象
+     * 然后将构造函数中的this指向该空对象
+     * 然后执行构造函数
+     * 返回对象
+     */
+    // var a = new f('5m/s', '哈哈哈哈哈');
+    // console.log(a);
+    //
+    // console.log(a.yyy());
+    //
+    // a.zzz('你好');
+    //
+    // console.log(a.yyy());
+
+    /**
+     * JavaScript中函数可以被覆盖声明
+     */
+    // function f1() {
+    //     console.log(1111);
+    // }
+    // function f2() {
+    //     console.log(22222);
+    // }
+    // f1();
+
+
+    /**
+     * 原型链  冒充继承  复制继承
+     */
+    //原形
+    function Popsicle(name) {
+        this.name = name;
+        this.run = function () {
+            console.log('我跑的超快');
+        };
+
+        this.say  = function () {
+            console.log('你舔不到我');
+        }
+    }
+    var c1 = new  Popsicle('冰棍');
+    console.log(c1);
+    
+    function FourHundredAndFour() {
+        this.say = function () {
+            console.log('这冰棍真好吃');
+        }
+    }
+    //使用 原形链继承
+    FourHundredAndFour.prototype = c1;
+
+    var  t1 = new FourHundredAndFour();
+    t1.say();
+    t1.run();
+    console.log(t1);
+    
+    function Equation() {
+        this.xxx = function () {
+            console.log('妈卖咪咪洪');
+        }
+    }
+    Equation.prototype = t1;
+    var d1 = new Equation();
+    d1.run();
+    console.log(d1);
+    d1.say();
+    d1.xxx();
+
+    console.log('*************************************************');
+
+
+    function  IceBar() {
+        this.name = '小冰棍';
+        this.Ice = function () {
+            console.log('我好冰');
+        }
+        console.log(this)
+    }
+
+    function FourAndFour() {
+
+    }
+    var b1 = new FourAndFour();
+    console.log(b1);
+
+    console.log(new IceBar());
+    FourAndFour.call(new IceBar());
+
+    new FourAndFour();
+    console.log('--------------------');
+    // 哪个函数调用了call方法，则该函数里面的代码会被执行一遍，不过该函数内部的this会执行call的第一个参数指定的值
+    // apply和call作用一模一样，只是传参方式不同
+
+    //call改变了this的指向
+    IceBar.call(new FourAndFour());
+
+
+    console.log('************************')
+
+
+    function print(a, b, c) {
+        this.person = 'CC';
+        var message = [this.person, 'is an awesome', this.role].join(' ');
+        console.log(message);
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+    }
+
+    var desc = {
+        person:'AA',
+        role:'BB'
+    };
+
+    print.call(desc, 1, 2, 3);
+    print.apply(desc, [1, 2, 3]);
+
+
+    console.log('************************************************')
+
+
+
+    function Animal(name){
+        this.name = name;
+        this.showName = function(){
+            console.log(this.name);
+        };
+    }
+
+
+
+    function Cat1(name){
+        Animal.apply(this,arguments);
+    }
+    var cat = new Cat1('cat');
+
+    cat.showName();
+
+
+    /**
+     * 产生一个空对象 A
+     * this指向该对象 A
+     * 执行Cat1里面的代码
+     *     执行Animal里面的代码，同时将Animal里面的this，指向 A、
+     * 返回对象A
+     */
+
+
+
+
+
+</script>
+</body>
+</html>

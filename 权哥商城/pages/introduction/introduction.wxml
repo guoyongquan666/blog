@@ -1,0 +1,50 @@
+<!--pages/detail/detail.wxml-->
+<v-tabs active="{{ active }}" bind:change="onChange">
+  <v-tab title="商品">
+  <image class="detailg" src="{{ym}}{{goodsImage}}" mode="widthFix"></image>
+  <view class="namepage">商品名称:
+    <text class="name">{{goodsName}}</text>
+  </view>
+  <view class="pricepage">价格:
+    <text class="price">{{goodsPrice}}</text>
+    </view>
+      <view class="goods_collect_btn" bindtap="collect">
+      <view wx:if="{{iscollect}}">
+        <image src="/pages/static/aixin1.jpg" class="goods_collect_img"></image>
+      </view>
+      <view wx:else>
+        <image src="/pages/static/icon-aixin1.png" class="goods_collect_img"></image>
+      </view> 
+      <text wx:if="{{iscollect}}">已收藏</text>
+      <text class="fa" wx:else>收藏</text>
+    </view>
+
+<!-- 下边导航栏 -->
+  <van-goods-action>
+  <van-goods-action-icon
+    icon="chat-o"
+    text="客服"
+    bind:click="onClickIcon"
+  />
+  <van-goods-action-icon
+    icon="cart-o"
+    text="购物车"
+    bind:click="onClickIcon"
+  />
+  <van-goods-action-button
+    text="加入购物车"
+    type="warning"
+    bind:click="onClickButton"
+  />
+  <van-goods-action-button
+    text="立即购买"
+    bind:click="onClickButton"
+  />
+  </van-goods-action>
+   
+  
+  </v-tab>
+  <v-tab title="评价">评价</v-tab>
+  <v-tab title="详情">详情</v-tab>
+  <v-tab title="推荐">推荐</v-tab>
+</v-tabs>

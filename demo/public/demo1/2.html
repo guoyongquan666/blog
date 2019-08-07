@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function f() {
+    //     {
+    //         let demo = '叫爸爸'
+    //         console.log(demo);
+    //     }
+    // }f()
+
+    // if (true){
+    //     let  demo = '叫爸爸';
+    //     console.log(demo);
+    //     demo = '滚粗';
+    //     console.log(demo);
+    // }
+
+    // var demo = '我是第一句\
+    // 我是第二句\
+    // 我是第三句';
+    // console.log(demo)
+
+    // var demo = `我是第一句
+    // 我是第二句
+    // 我是第三句`;
+    // console.log(demo);
+
+    // var demo = 100;
+    // console.log("我有${demo}岁了")   // 我有${demo}岁了
+    // console.log('我有${demo}岁了')   // 我有${demo}岁了
+    // //使用反引号可以定义多行字符串，且可以解析字符串内的变量
+    // console.log(`我有${demo}岁了`)   // 我有100岁了
+
+    {
+        // let demo = '叫爸爸就给你糖吃';
+        // 查看字符串中是否包含某些字符串
+        // console.log(demo.includes('你'));
+        // 查看字符是否以某个字符串开头
+        // console.log(demo.startsWith('叫'));
+        // 查看字符串是否以某个字符串结尾i
+        // console.log(demo.endsWith('吃'));
+        // 字符串重复
+        // let demo = '*';
+        // console.log(demo.repeat(10));
+        // 如果字符串的长度不满10位,则在其后面比字符s
+        // console.log(demo.padEnd(10,'s'))
+        //  如果字符串的长度不满10位,则在其前面补字符哈
+        // console.log(demo.padStart(10,'哈'))
+    }
+
+    // function f(a , b) {
+    //     console.log(a);  // 10
+    //     console.log(b)   // undefined
+    // }f(10)
+
+    // 默认参数尽量放后面
+    // function f(b, a = 100) {
+    //     console.log(b);  // 11
+    //     console.log(a);  // 100
+    // }f(11);
+
+    // function f(z,...xxx) {
+    //     console.log(z);     // 10
+    //     console.log(xxx);   // [1,2,3,4,5,6]
+    // }f(10,1,2,3,4,5,6)
+
+    // demo = num => num === 0 ? '女' : '男';
+    // function demo(num) {
+    //     return num === 0 ? '女' : '男';
+    // }
+    // console.log(demo(1))
+
+    // demo = (num, say) => `${say} 是 ${num === 0 ? '女' : '男'}的`;
+    // console.log(demo(0,'蔡徐坤'))  // 蔡徐坤 是 女的
+
+    // demo = () => Math.random();
+    // console.log(demo()) // 0.5115855731261902
+
+    // let demo = ['大娃','二娃','三娃'];
+    // [x ,y ,z] = demo;
+    // console.log(x); // 大娃
+    // console.log(y); // 二娃
+    // console.log(z); // 三娃
+
+    {
+    //     let demo = ['大娃','二娃','三娃','四娃','五娃','六娃','七娃'];
+    //     // 如果解构时， 某个变量前面使用三个点，表示将后面解构出来的内容都给该变量
+    //     [x ,y ,...z] = demo;
+    //     console.log(x); // 大娃
+    //     console.log(y); // 二娃
+    //     console.log(z); // ["三娃", "四娃", "五娃", "六娃", "七娃"]
+    }
+
+    {
+        // let demo = ['唐僧','孙悟空','猪八戒','沙悟净','白龙马'];
+        // // 如果解构的变量过多， 没有被分配的变量的值为 undefined
+        // [a ,b ,c ,d ,e ,f] = demo;
+        // console.log(a); // 唐僧
+        // console.log(b); // 孙悟空
+        // console.log(c); // 猪八戒
+        // console.log(d); // 沙悟净
+        // console.log(e); // 白龙马
+        // console.log(f); // undefined
+
+        // let demo = ['白骨精','蜘蛛精','紫霞仙子','牛魔王'];
+        // // 解构的变量也可以有默认值
+        // [a ,b ,c ,d ,e='铁扇公主']  = demo;
+        // console.log(a ,b ,c ,d ,e);  // 白骨精 蜘蛛精 紫霞仙子 牛魔王 铁扇公主
+    }
+
+    // var a = {
+    //     name : '孙悟空',
+    //     age : '1000',
+    //     sex : '公'
+    // };
+    // var {name ,age ,sex} = a;
+    // console.log(name ,age ,sex);
+
+    {
+        // 将几个值转成数组
+        // console.log(new Array(1,2,3,4,5,6))
+        // let demo = Array.of(1,2,3,4,5,6);
+        // console.log(demo)
+
+        // 将集合等数据类型转成数组
+        // let demo = new Set([1,2,3,4,5,6]);
+        // console.log(demo);
+        // console.log(Array.from(demo));
+
+        // // 将数组中的值替换成我们设置的值
+        // let demo = ['a' ,'b' ,'c' ,'d' ,'e'];
+        // //将数组中所有值替换成我们制定的值
+        // console.log(demo.fill('你好'));
+        // 从第二位开始到结束，将这些位置上的值替换成我们指定的值
+        // console.log(demo.fill('你好',2));
+        // 从第二位开始到第三位(不包含第三位)结束,将这些位置上的值替换成我们指定的值
+        // console.log(demo.fill('你好',2,3));
+    }
+
+    {
+        // let demo = ['a' ,'b' ,'大哥' ,'d' ,'e'];
+        // 遍历值
+        // for (let i of demo){
+        //     console.log(i);
+        // }
+
+        //遍历键值
+        // for (let i of demo.keys()){
+        //     console.log(i)
+        // }
+
+        // 遍历值
+        // for (let i of  demo.values()){
+        //     console.log(i);
+        // }
+
+        //遍历键值 和 值
+        // for (let [i ,j] of  demo.entries()){
+        //     console.log(i ,j);
+        // }
+    }
+
+    // let demo = [1, 2, 3, 7, 9];
+    // // find 会将数组的每一个元素放入到函数中进行迭代处理
+    // // 将第一个满足条件的值取出来
+    // console.log(demo.find(function (x) {
+    //     return x > 5
+    // }));
+    // findIndex 会将数组的每一个元素放入到函数中进行迭代处理
+    // 将第一个满足条件的值的键取出来
+    // console.log(demo.findIndex(function (x) {
+    //     return x > 5
+    // }));
+    // 检验某个值是否在数组内
+    // console.log(demo.includes(10));
+
+    {
+        // class Demo
+        // {
+        //     // 这是构造方法，名字必须叫 constructor
+        //     constructor(name, sex){
+        //         this.name = name;
+        //         this.sex = sex;
+        //     }
+        //
+        //     // 如果通过对象设置xxx属性值的时候，会自动调用这个方法
+        //     set xxx(x){
+        //         console.log('setter被调用了');
+        //         this._xxx = x;
+        //     }
+        //
+        //     //如果通过对象获取xxx属性值的时候，会自动调用这个方法
+        //     get xxx(){
+        //         console.log('getter被调用了');
+        //         return this._xxx;
+        //     }
+        // }
+        // var h2 = new Demo('蔡徐坤', '女');
+        // //读取xxx属性值
+        // console.log(h2.xxx);
+        // //设置xxx属性的值
+        // h2.xxx = '大海';
+        // //读取xxx属性的值
+        // console.log(h2.xxx);
+    }
+
+</script>
+
+
+</body>
+</html>

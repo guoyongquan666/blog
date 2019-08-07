@@ -1,0 +1,63 @@
+{
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "van-search": "/dist/search/index",
+    "van-icon": "/dist/icon/index",
+    "van-cell": "/dist/cell/index",
+    "van-cell-group": "/dist/cell-group/index",
+    "van-row": "/dist/row/index",
+    "van-col": "/dist/col/index",
+    "van-panel": "/dist/panel/index",
+    "van-card": "/dist/card/index",
+    "van-tree-select": "/dist/tree-select/index"
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/search/search",
+    "pages/cart/cart",
+    "pages/user/user",
+    "pages/introduction/introduction"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#f4511e",
+    "navigationBarTitleText": "权哥商城",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#5c6bc0",
+    "backgroundColorTop": "#212121",
+    "backgroundColorBottom": "#cfd8dc",
+    "enablePullDownRefresh": true
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#b0bec5",
+    "selectedColor": "#ff1744",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/image/房子.png",
+        "selectedIconPath": "static/image/房子1.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "分类",
+        "iconPath": "static/image/分类.png",
+        "selectedIconPath": "static/image/分类1.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "static/image/购物车.png",
+        "selectedIconPath": "static/image/购物车1.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "static/image/111.png",
+        "selectedIconPath": "static/image/11.png"
+      }
+    ]
+  }
+}

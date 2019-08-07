@@ -1,0 +1,64 @@
+
+<!-- 搜索 -->
+<view>
+  <van-search
+   value="{{ value }}"
+   placeholder="请输入搜索关键词"
+   bind:search="onSearch"
+   shape="round"
+   background="#bdbdbd">
+   <view slot="action" bind:tap="onSearch">搜索</view>
+</van-search>
+</view>
+
+<!-- 轮播图 -->
+<view>
+<swiper circular indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  
+  <block wx:for="{{imgUrls}}">
+  
+    <swiper-item >
+      <image src="{{item}}" id="image" class="slide-image"  />
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+
+<!-- 产品 -->
+<view class="logo" >
+  <block wx:for="{{logos}}" wx:key="index">
+    <view class="logoinfo">
+      <image class="logoimg" mode="scaleToFill" src="{{item.image}}"></image>
+      <text class="logotext">{{item.title}}</text>
+    </view>
+  </block>
+</view>
+
+<!-- 为您推荐 --> 
+<block>
+  <van-panel title="为您推荐"  status="精品爆款">  
+  </van-panel>
+</block>
+
+<!-- sku -->
+<!-- <view class="goods">
+<block wx:for="{{quicks}}" wx:key="index">
+  <view class="goods_box" bindtap="detail" data-goodsPrice="{{item.price}}" data-goodsId="{{item.id}}" data-goodsName="{{item.name}}" data-goodsImage="{{item.image}}">
+      <image src="{{ym}}{{item.image}}" style="width:375rpx;height:375rpx;" mode="scaleToFill"></image>
+      <text class="goods_text">{{item.name}}</text>
+      <text class="goods_text_2">惊爆价{{item.price}}</text>
+    </view>
+  </block>
+</view> -->
+
+<view class="goods">
+  <block wx:for="{{quicks}}" wx:key="index">
+    <van-card class="sku"
+  num="{{item.stock}}"
+  price="{{item.price}}"
+  title="{{item.name}}"
+  thumb="{{ym}}{{item.image}}" 
+/>
+  </block>
+</view>
